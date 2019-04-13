@@ -1,0 +1,10 @@
+if (isset($_SESSION['usuario']))
+{
+  $sql="SELECT usuario FROM login WHERE rol='ap'";
+  $resultado = mysqli_query($conexion2,$sql);
+  echo "Seleccionar el usuario:";
+  echo "<select name='usuario'>";
+while($fila = mysqli_fetch_array($resultado)) 
+  {   
+     echo "<option value='".$fila['usuario'] ."'> ".$fila[0] ."</option>";
+  }
